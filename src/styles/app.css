@@ -1,0 +1,90 @@
+/* Buttons */
+.header-btn, .submit-btn {
+    height: 5vh;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #E8E8E8;
+    transition: background 0.25s ease;
+}
+
+.header-btn {
+    width: 50%;
+    background-color: #141414;
+    border: 1px solid #1D1D1D;
+}
+
+.header-btn-active {
+    background-color: #1D1D1D;
+    cursor: default;
+}
+
+.income-btn {
+    border-radius: 5px 0 0 0;
+}
+
+.expense-btn {
+    border-radius: 0 5px 0 0;
+}
+
+.submit-btn {
+    padding: .5vh 2vw;
+    border-radius: 5px;
+    background-color: #5f12c9;
+    margin-top: 2.5vh;
+}
+
+.submit-btn:hover {
+    background-color: #5310b0;
+}
+
+/* Content */
+.app {
+    display: flex;
+    background-color: #121212;
+}
+
+.add-section, .display-section {
+    height: 100vh;
+}
+
+.add-section {
+    width: 25%;
+}
+
+.add-form {
+    width: 90%;
+    margin: 5vh auto;
+    height: 80vh;
+    background-color: #1D1D1D;
+    border-radius: 5px;
+}
+
+.add-form form {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.add-form form div {
+    margin: 2.5vh auto;
+    text-align: left;
+}
+
+.add-form form div p {
+    color: #E8E8E8;
+}
+
+.add-form input, .add-form select {
+    width: 100%;
+    margin-top: .5vh;
+    border-radius: 2.5px;
+    border: none;
+    padding: .5vh .25vw;
+}
+
+.display-section {
+    width: 75%;
+    background-color: burlywood;
+}
