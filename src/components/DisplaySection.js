@@ -1,3 +1,4 @@
+import DisplayFooter from "./DisplayFooter";
 import DisplayHeader from "./DisplayHeader";
 import DisplayMain from "./DisplayMain";
 
@@ -6,6 +7,7 @@ const DisplaySection = () => {
         <section className="display-section">
             <DisplayHeader />
             <DisplayMain />
+            <DisplayFooter />
         </section>
     )
 }

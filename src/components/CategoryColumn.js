@@ -3,6 +3,8 @@ import CategoryData from "./CategoryData";
 import ColumnHeader from "./ColumnHeader";
 
 const CategoryColumn = (props) => {
+    
+
     return (
         <section className="display-column">
             <ColumnHeader header={props.header} />
