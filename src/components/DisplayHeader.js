@@ -1,7 +1,7 @@
-const DisplayHeader = () => {
+const DisplayHeader = (props) => {
     return (
         <div className="display-header">
-            <form>
+            <form onChange={props.updateMonth}>
                 <select>
                     <option value="ytd">YTD</option>
                     <option value="january">January</option>
