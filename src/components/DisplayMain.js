@@ -1,12 +1,12 @@
 import CategoryColumn from "./CategoryColumn";
 import DataColumn from "./DataColumn";
 
-const DisplayMain = () => {
+const DisplayMain = (props) => {
     return (
         <section className="display-main">
-            <DataColumn header={"Income"}/>
-            <DataColumn header={"Expense - Individual"} />
-            <CategoryColumn header={"Expense - Category"} />
+            <DataColumn header={"Income"} data={props.income} />
+            <DataColumn header={"Expense - Individual"} data={props.expense} />
+            <CategoryColumn header={"Expense - Category"} data={props.expense} />
         </section>
     )
 }
