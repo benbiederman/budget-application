@@ -12,7 +12,10 @@ const DataColumn = (props) => {
                 name={d.name}
                 month={d.month}
                 amount={d.amount}
-                key={d.id} />
+                key={d.id}
+                id={d.id} 
+                removeData={props.removeData}
+                />
             ))
         }
     }

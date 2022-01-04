@@ -28,7 +28,7 @@ const DisplaySection = (props) => {
                 })
             )
         }
-    }, [month])
+    }, [props.income, props.expense, month])
 
     // Functions
     function updateMonth(e){
@@ -41,6 +41,8 @@ const DisplaySection = (props) => {
             <DisplayMain 
                 income={filteredIncome}
                 expense={filteredExpense}
+                removeIncome={props.removeIncome}
+                removeExpense={props.removeExpense}
             />
             <DisplayFooter 
                 income={filteredIncome}

@@ -4,13 +4,13 @@ import ColumnHeader from "./ColumnHeader";
 
 const CategoryColumn = (props) => {
     // State
-    const[housing, setHousing] = useState();
-    const[transportation, setTransportation] = useState();
-    const[food, setFood] = useState();
-    const[utilities, setUtilities] = useState();
-    const[medical, setMedical] = useState();
-    const[recreation, setRecreation] = useState();
-    const[misc, setMisc] = useState();
+    const[housing, setHousing] = useState(0);
+    const[transportation, setTransportation] = useState(0);
+    const[food, setFood] = useState(0);
+    const[utilities, setUtilities] = useState(0);
+    const[medical, setMedical] = useState(0);
+    const[recreation, setRecreation] = useState(0);
+    const[misc, setMisc] = useState(0);
 
     useEffect(() => {
         setHousing(0);
