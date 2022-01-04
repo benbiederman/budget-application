@@ -42,7 +42,10 @@ const DisplaySection = (props) => {
                 income={filteredIncome}
                 expense={filteredExpense}
             />
-            <DisplayFooter />
+            <DisplayFooter 
+                income={filteredIncome}
+                expense={filteredExpense}
+            />
         </section>
     )
 }
