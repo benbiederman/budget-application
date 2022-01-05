@@ -1,9 +1,12 @@
 import AddForm from "./AddForm";
 
-const AddSection = () => {
+const AddSection = (props) => {
     return (
         <section className="add-section">
-            <AddForm />
+            <AddForm 
+                addIncome={props.addIncome}
+                addExpense={props.addExpense}
+            />
         </section>
     )
 }

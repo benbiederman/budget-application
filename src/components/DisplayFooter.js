@@ -20,12 +20,40 @@ const DisplayFooter = (props) => {
         })
     }, [props.income, props.expense])
 
+    function incomeStyling(){
+        if(totalIncome > 0){
+            return "footer-column positive"
+        } else {
+            return "footer-column neutral"
+        }
+    }
+
+    function expenseStyling(){
+        if(totalExpense > 0){
+            return "footer-column negative"
+        } else {
+            return "footer-column neutral"
+        }
+    }
+
+    // Determines if balance is positive or negative, colors accordingly. 
+    function balanceStyling(){
+        if(totalIncome - totalExpense > 0){
+            console.log('hi')
+            return "footer-column positive"
+        } else if(totalIncome - totalExpense < 0) {
+            return "footer-column negative"
+        } else {
+            return "footer-column neutral"
+        }
+    }
+
 
     return (
         <section className="display-footer">
-            <FooterColumn header={"Total Income:"} amount={totalIncome.toFixed(2)} />
-            <FooterColumn header={"Total Expenses:"} amount={totalExpense.toFixed(2)} />
-            <FooterColumn header={"Balance:"} amount={(totalIncome - totalExpense).toFixed(2)} />
+            <FooterColumn header={"Total Income:"} amount={totalIncome.toFixed(2)} style={incomeStyling()}/>
+            <FooterColumn header={"Total Expenses:"} amount={totalExpense.toFixed(2)} style={expenseStyling()} />
+            <FooterColumn header={"Balance:"} amount={(totalIncome - totalExpense).toFixed(2)} style={balanceStyling()} />
         </section>
     )
 }

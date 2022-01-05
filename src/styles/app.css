@@ -242,7 +242,18 @@
 
 .footer-column p {
     font-family: "Bebas Neue";
-    color: #E8E8E8;
     font-size: 2rem;
     margin-top: 1.5vh;
+}
+
+.positive p {
+    color: green;
+}
+
+.negative p {
+    color: #8a1e20;
+}
+
+.neutral p {
+    color: #E8E8E8;
 }
