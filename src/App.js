@@ -5,10 +5,21 @@ import './styles/app.css';
 
 function App() {
   // State
-  const[income, setIncome] = useState([{name: "interest", amount: 12, month: "january", id:1521}, {name: "rental", amount: 1234, month: "february", id: 123452345}, {name: "paycheck", amount: 1233, month: "february", id: 1324234}, {name: "paycheck", amount: 12345, month: "april", id: 1232534243}]);
-  const[expense, setExpense] = useState([{name: "rent", amount: 123, month: "january", category: "housing", id: 12}, {name: "car", amount: 12, month: "january", category: "transportation", id: 14}, {name: "rent", amount: 123, month: "february", category: "housing", id: 112341232}, {name: "car", amount: 12, month: "february", category: "transportation", id: 23424356453}]);
+  const[income, setIncome] = useState([]);
+  const[expense, setExpense] = useState([]);
 
   // Functions
+  // Add item to Income
+  function addIncome(data){
+      setIncome([...income, data]);
+  }
+
+  //Add item to Expense
+  function addExpense(data){
+      setExpense([...expense, data])
+  }   
+
+  // Remove items from Income Data
   function removeIncome(id){
     setIncome(
         income.filter(i => {
@@ -17,6 +28,7 @@ function App() {
     )
   }
 
+  // Remove items from Expense Data
   function removeExpense(id){
      setExpense(
         expense.filter(e => {
@@ -27,7 +39,10 @@ function App() {
 
   return (
     <div className="app">
-        <AddSection />
+        <AddSection 
+            addIncome={addIncome}
+            addExpense={addExpense}
+        />
         <DisplaySection 
           income={income}
           expense={expense}

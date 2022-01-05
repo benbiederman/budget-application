@@ -1,9 +1,45 @@
-const IncomeForm = () => {
+import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
+const IncomeForm = (props) => {
+    // State
+    const[name, setName] = useState('');
+    const[amount, setAmount] = useState('');
+    const[month, setMonth] = useState('');
+    
+ 
+    // Handler
+    function nameHandler(e){
+        setName(e.target.value);
+    }
+    
+    function amountHandler(e){
+        setAmount(parseFloat(e.target.value));
+    }
+
+    function monthHandler(e){
+        setMonth(e.target.value);
+    }
+
+    function formHandler(e){
+        e.preventDefault();
+        let income = {name: name, amount: amount, month: month, id: uuidv4()}
+
+        // Calls up to App.js to add Income
+        props.addIncome(income);
+
+        // Reset form upon submission 
+        setName('');
+        setAmount('');
+        setMonth('');
+    }
+
+
     return (
-        <form className="income-form">
+        <form className="income-form" onSubmit={formHandler}>
             <div>
                 <p>Income Source:</p>
-                <select required>
+                <select value={name} onChange={nameHandler} required>
                     <option value="">- Please Select One -</option>
                     <option value="paycheck">Paycheck</option>
                     <option value="rental">Rental</option>
@@ -14,12 +50,12 @@ const IncomeForm = () => {
 
             <div>
                 <p>Income Amount:</p>
-                <input type="number" min={0.00} step={0.01} required />
+                <input onChange={amountHandler} value={amount} type="number" min="0.00" step="0.01" required/>
             </div>
 
             <div>
                 <p>Income Month:</p>
-                <select required>
+                <select onChange={monthHandler} value={month} required>
                     <option value="">- Please Select One -</option>
                     <option value="january">January</option>
                     <option value="february">February</option>

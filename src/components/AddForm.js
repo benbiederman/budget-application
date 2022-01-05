@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import ExpenseForm from "./ExpenseForm";
 import IncomeForm from "./IncomeForm";
 
-const AddForm = () => {
+const AddForm = (props) => {
     // State
     const[form, setForm] = useState('income');
 
@@ -34,9 +34,9 @@ const AddForm = () => {
 
     function formGenerator(){
         if(form === 'income'){
-            return <IncomeForm />
+            return <IncomeForm addIncome={props.addIncome}/>
         } else {
-            return <ExpenseForm />
+            return <ExpenseForm addExpense={props.addExpense}/>
         }
     }
 
