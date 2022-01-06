@@ -1,16 +1,24 @@
-* { 
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-family: "Roboto", sans-serif;
   color: #121212;
 }
 
-input, select, option {
-  background-color: #E8E8E8;
+input,
+select,
+option {
+  background-color: #e8e8e8;
 }
 
 button {
